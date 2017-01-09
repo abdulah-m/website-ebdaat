@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>Ebdaat</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta http-equiv="content-language" content="ar" />
+		<meta name="description" content=""/>
+		<meta name="keywords" content="" />
+        <meta name="author" description="Abdullah Almohammad" />
+        <meta name="email" description="abdulah.almuhamad@gmail.com" />
+        <meta name="email" content="info@spoint.in" />
+        <meta name="Charset" content="UTF-8" />
+        <meta name="Distribution" content="Global" />
+        <meta name="Rating" content="General" />
+        <meta name="Robots" content="INDEX,FOLLOW" />
+        
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oxygen:400,300,700">
+        <link rel="stylesheet" href="css/style.css">
+        <link href="themes/ui-darkness/jquery-ui-1.8.12.custom.css" rel="stylesheet" media="screen">
+		<link href="themes/jquery.videobackground.css" rel="stylesheet" media="screen">
+        <script src="external/jquery.js"></script>
+		<script src="script/jquery.videobackground.js"></script>
+		<script>
+			$(document).ready(function() {
+				$('body').prepend('<div id="my-video" class="video-background"></div>');
+				$('.video-background').videobackground({
+					videoSource: [['media/demo.mp4', 'video/mp4'],
+                                  ['media/demo.webm', 'video/webm'],
+                                  ['media/demo.ogv', 'video/ogg']], 
+					controlPosition: '#main',
+					poster: 'images/video-01.jpg',
+					loadedCallback: function() {
+						//(this).videobackground('mute');
+						//(this).videobackground().addClass('video');
+                        
+					}
+				});
+			});
+		</script>
+    </head>
+    <body>
+        <div id="main" role="main"></div>
+        <div class="content">
+          <a href="./en/index.php" class="content__cta"><img src="./images/en.png" /><h1>English</h1></a>
+          <a href="./tr/index.php" class="content__cta"><img src="./images/tr.png" /><h1>Türkçe</h1></a>
+          <a href="./ar/index.php" class="content__cta"><img src="./images/ar.png" /><h1>العربية</h1></a>
+        </div><!-- /content -->
+        
+        <img id="bgImg" src="images/video-01.jpg" />
+        
+        <script>
+            (function() {
+                  /**
+                   * Video element
+                   * @type {HTMLElement}
+                   */
+                  var video = document.getElementById("my-video");
+
+                  /**
+                   * Check if video can play, and play it
+                   */
+                  video.addEventListener( "canplay", function() {
+                    video.play();
+                  });
+            })();
+        </script>
+    </body>
+</html>
